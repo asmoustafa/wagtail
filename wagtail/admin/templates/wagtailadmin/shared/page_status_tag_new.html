@@ -50,5 +50,14 @@
         {% endwith %}
 
         {% trans 'Live' %}
+
+        <!-- Add two different spans for dynamic text switching -->
+        <span data-privacy-status="public" {% if not is_public %}class="w-hidden"{% endif %}>
+            {% trans 'Visible to all. Visit the live page' %}
+        </span>
+        <span data-privacy-status="private" {% if is_public %}class="w-hidden"{% endif %}>
+            {% trans 'Private. Visit the live page' %}
+        </span>
+        
     </a>
 {% endif %}

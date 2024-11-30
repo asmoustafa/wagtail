@@ -64,6 +64,10 @@ $(() => {
             // Swap other privacy indicators in settings and the header live button
             $('.privacy-indicator').removeClass('private').addClass('public');
             $('.privacy-indicator-icon use').attr('href', '#icon-view');
+
+            // Show the public text and hide the private text
+            $('[data-privacy-status="public"]').removeClass('w-hidden');
+            $('[data-privacy-status="private"]').addClass('w-hidden');
           } else {
             // Swap the status sidebar text and icon
             $('[data-privacy-sidebar-public]').addClass('w-hidden');
@@ -72,6 +76,10 @@ $(() => {
             // Swap other privacy indicators in settings and the headers live button icon
             $('.privacy-indicator').removeClass('public').addClass('private');
             $('.privacy-indicator-icon use').attr('href', '#icon-no-view');
+
+            // Show the private text and hide the public text
+            $('[data-privacy-status="public"]').addClass('w-hidden');
+            $('[data-privacy-status="private"]').removeClass('w-hidden');
           }
         },
       },
